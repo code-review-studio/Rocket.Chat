@@ -49,11 +49,7 @@ export const useMediaSessionControls = (instance?: MediaSignalingSession): Media
 			if (!instance) {
 				return;
 			}
-			try {
-				await instance.startCall(kind, id);
-			} catch (error) {
-				console.error('Error starting call', error);
-			}
+			await instance.startCall(kind, id);
 		};
 
 		const changeDevice = async (deviceId: string) => {
